@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>For You ❤️</title>
 
 <style>
 
-/* 🔥 CLEAN BODY */
+/* 🔥 BODY */
 body {
   margin: 0;
   padding: 0;
@@ -16,19 +15,20 @@ body {
   align-items: center;
   height: 100vh;
   font-family: Arial, sans-serif;
+}
 
-  body::before {
+/* 🔥 BACKGROUND */
+body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  
 
   background: url("us.jpg") no-repeat center center;
   background-size: cover;
-    filter: blur(2px);
+  filter: blur(2px);
 
   z-index: -2;
 
@@ -36,12 +36,8 @@ body {
 }
 
 @keyframes zoomBg {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
 
 /* 🔥 OVERLAY */
@@ -51,10 +47,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.4);
   pointer-events: none;
+  z-index: -1;
 }
-  .content {
+
+/* 🔥 CONTENT */
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,19 +61,26 @@ body {
   z-index: 1;
 }
 
-.magic-btn {
-  margin-top: 10px;
-}
-}
+/* 🔥 TEXT */
+h1 {
+  color: #fff;
+  text-align: center;
 
-.magic-btn {
-  margin-top: 20px;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #ff9ecb,
+    0 0 20px #ff4d88;
 }
 
 /* 🔥 BUTTON */
 .magic-btn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
   padding: 18px 35px;
-  font-size: 24px;
+  font-size: 22px;
   border-radius: 30px;
 
   background: linear-gradient(45deg, #ff9ecb, #ff4d88);
@@ -88,32 +94,15 @@ body {
     0 0 10px rgba(255, 77, 136, 0.6),
     0 0 20px rgba(255, 77, 136, 0.6);
 
-  text-shadow: 0 0 5px #fff, 0 0 10px #ff4d88;
-
-  transition: 0.3s ease;
+  text-shadow: 0 0 5px #fff;
+  transition: 0.3s;
 }
 
 .magic-btn:hover {
-  transform: scale(1.1);
-
-  box-shadow: 
-    0 0 20px #ff4d88,
-    0 0 40px #ff4d88;
-}
-/* TEXT */
-h1 {
-  color: #ffffff;
-  text-align: center;
-  z-index: 1;
-
-  text-shadow: 
-    0 0 5px #fff,
-    0 0 10px #ff9ecb,
-    0 0 20px #ff4d88,
-    0 0 30px #ff4d88;
+  transform: translateX(-50%) scale(1.1);
 }
 
-/* HEART */
+/* 🔥 HEART */
 .heart {
   position: absolute;
   color: #ff69b4;
@@ -121,39 +110,33 @@ h1 {
 
   text-shadow:
     0 0 5px #ff69b4,
-    0 0 10px #ff69b4,
-    0 0 20px #ff1493;
+    0 0 10px #ff69b4;
 
   animation: float 5s linear infinite;
 }
 
 @keyframes float {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-100vh); }
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100vh); }
 }
 
 </style>
-
 </head>
 
 <body>
 
-  <div class="overlay"></div>
-  
-  <div class="content">
+<div class="overlay"></div>
 
+<div class="content">
   <h1>
     💗 Stay Hydrated my cutieee 💗<br>
     💕 Mera strong bachhaaaa I loveee youuu sooo much 💕
   </h1>
-
 </div>
 
-<!-- 🔥 button yaha alag -->
 <button onclick="playMusic()" class="magic-btn">
   💖 Tap for Magic 💖
 </button>
-
 
 <audio id="bgMusic" loop>
   <source src="Ed%20Sheeran%20-%20Perfect.mp3" type="audio/mpeg">
@@ -170,20 +153,16 @@ function createHeart() {
   heart.innerHTML = "💗";
 
   heart.style.left = Math.random() * 100 + "vw";
-
-  /* 👇 YE ADD KAR */
   heart.style.fontSize = (Math.random() * 40 + 30) + "px";
-
   heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
 
   document.body.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
+  setTimeout(() => heart.remove(), 5000);
 }
 
-setInterval(createHeart, 150);
+setInterval(createHeart, 250);
 </script>
+
 </body>
 </html>
