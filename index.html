@@ -2,8 +2,7 @@
 <html>
 <head>
   
-  <button onclick="playMusic()" 
-style="position:absolute; top:20px; right:20px; padding:10px 15px; border:none; border-radius:10px; background:white; color:#ff4d88; font-weight:bold;">
+  <button onclick="playMusic()" class="magic-btn">
 💖 Tap for Magic 💖
 </button>
 
@@ -20,6 +19,29 @@ function playMusic() {
 <title>For You ❤️</title>
 
 <style>
+
+  .magic-btn {
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ff9ecb, #ff4d88);
+  color: white;
+  font-weight: bold;
+  margin-top: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 77, 136, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* hover effect */
+.magic-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 77, 136, 0.7);
+}
+  .magic-btn:active {
+  transform: scale(0.95);
+}
 body {
   margin: 0;
   padding: 0;
