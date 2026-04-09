@@ -33,6 +33,26 @@ function playMusic() {
   box-shadow: 0 5px 15px rgba(255, 77, 136, 0.5);
   transition: all 0.3s ease;
 }
+  body {
+  background-image: url("us.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 182, 193, 0.4); /* baby pink overlay */
+  z-index: -1;
+}
+  body {
+  position: relative;
+  z-index: 1;
+}
 
 /* hover effect */
 .magic-btn:hover {
