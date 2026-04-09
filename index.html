@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
+  <button onclick="playMusic()" 
+style="position:absolute; top:20px; right:20px; padding:10px 15px; border:none; border-radius:10px; background:white; color:#ff4d88; font-weight:bold;">
+💖 Tap for Magic 💖
+</button>
+
+<audio id="bgMusic" loop>
+  <source src="perfect.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  document.getElementById("bgMusic").play();
+}
+</script>
+  
 <title>For You ❤️</title>
 
 <style>
