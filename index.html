@@ -15,9 +15,32 @@ body {
   height: 100vh;
   font-family: Arial, sans-serif;
 }
+  .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
 
 h1 {
-  color: white;
+  color: ffffff;
   text-align: center;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   z-index: 2;
@@ -36,7 +59,7 @@ h1 {
     opacity: 1;
   }
   100% {
-    transform: translateY(-10vh) scale(1.5);
+    transform: translateY(-100vh) scale(1.5);
     opacity: 0;
   }
 }
