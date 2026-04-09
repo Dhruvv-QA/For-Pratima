@@ -33,11 +33,16 @@ function playMusic() {
   box-shadow: 0 5px 15px rgba(255, 77, 136, 0.5);
   transition: all 0.3s ease;
 }
-  body {
-  background-image: url("./us.jpg");
+  html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: url("us.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
 }
   body::before {
   content: "";
@@ -46,8 +51,9 @@ function playMusic() {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 182, 193, 0.4); /* baby pink overlay */
+  background: rgba(0,0,0,0.3);
   z-index: -1;
+    
 }
   body {
   position: relative;
