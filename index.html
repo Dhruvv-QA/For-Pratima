@@ -2,6 +2,8 @@
 <html>
 <head>
   
+  <div class="overlay"></div>
+  
   <button onclick="playMusic()" class="magic-btn">
 💖 Tap for Magic 💖
 </button>
@@ -41,37 +43,29 @@ function playMusic() {
   
   body {
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
-/* BLUR BACKGROUND (peeche) */
-body::before {
-  content: "";
+  .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+body {
+  position: relative;
+}
 
   background: url("./photo.jpeg") no-repeat center center fixed;
   background-size: cover;
 
   filter: blur(4px);
   z-index: -2;
-}
-
-/* DARK OVERLAY (upar) */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background: rgba(0, 0, 0, 0.5); /* ⭐ DARK */
-
-  z-index: -1;
 }
   
   
